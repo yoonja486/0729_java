@@ -68,7 +68,7 @@ public class IdolController {
 	
 	// 사용자가 로그인 요청 시 호출되는 메소드
 	
-	public void login(String userId, String userPwd) {
+	public Fan login(String userId, String userPwd) {
 		
 		// 컨트롤러가 가지고 있는 Fan의 정보를 필드에 저장하는 Fan객체들의 주소를 가지고 있는 
 		// fans라는 리스트의 요소에 하나하나 접근해서 Fan객체의 userId필드 및 userPwd필드를 사용자가 입력한 
@@ -84,8 +84,9 @@ public class IdolController {
 			}
 		}
 		return null;
-		
 	}
+	
+	
 	
 	
 }
