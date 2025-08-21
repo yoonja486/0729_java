@@ -184,18 +184,49 @@ public class IdolView {
 	}
 	
 	private void boardMenu() {
+		while(true) {
+			System.out.println("\n 에스파 게시판입니다.");
+			System.out.println("이용하실 메뉴를 선택해주세요.");
+			System.out.println("1. 게시글 작성");
+			System.out.println("2. 게시글 전체 조회");
+			System.out.println("3. 게시글 상세 조회");
+			System.out.println("4. 메인메뉴로 돌아가기");
+			System.out.println("당신의 선택은? 두구두구두구 > ");
+			int menuNo = sc.nextInt();
+			sc.nextLine();
 		
-		System.out.println("\n 에스파 게시판입니다.");
-		System.out.println("이용하실 메뉴를 선택해주세요.");
-		System.out.println("1. 게시글 작성");
-		System.out.println("2. 게시글 전체 조회");
-		System.out.println("3. 게시글 상세 조회");
-		System.out.println("4. 메인메뉴로 돌아가기");
-		System.out.println("당신의 선택은? 두구두구두구 > ");
-		int menuNo = sc.nextInt();
+			switch(menuNo) {
+			case 1 : post(); break;
+			case 2 : break;
+			case 3 : break;
+			case 4 : break;
+			}
+		}
+	}
+	
+	private void post() {
 		
+		System.out.println("\n게시글 작성 서비슈~~");
 		
-		
+		// 전제조건 : 로그인한 사용자만 게시글을 작성할 수 있음
+		// 1. 변수 ? 
+		// 2. if ?
+		// 3. for ? 
+		if(loginFan != null) {
+			
+			System.out.println("게시글 제목을 입력해주세요 > ");
+			String boardTitle = sc.nextLine();
+			
+			System.out.println("게시글 내용을 입력해주세요 > ");
+			String boardContent = sc.nextLine();
+			
+			ic.post(boardTitle, boardContent, loginFan.getUserId());
+			
+			System.out.println("게시글 작성 성공~~");
+			
+		} else {
+			System.out.println("로그인 후 이용가능한 서비스 입니다.");
+		}
 		
 	}
 	
