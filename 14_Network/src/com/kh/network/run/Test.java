@@ -7,6 +7,14 @@ public class Test {
 		
 		// 테스트
 		// 재밌다~~~~~
-	}
+		
+		// 오~~ㅋㅋㅋㅋㅋㅋㅋ
+	}	
+		public void zz() {
+			 
+			
+		}
+		
+	
 
 }
