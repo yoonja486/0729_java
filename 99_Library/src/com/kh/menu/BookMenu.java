@@ -12,7 +12,6 @@ public class BookMenu {
 	private BookController bc = new BookController();
 	
 	public void mainMenu() {
-		// 사용자가 직접 메인 메뉴를 선택 할 수 있음. 종료전까지 반복 실행. 각 메뉴를 누를 시 해당 메소드로 이동.
 		System.out.println("== Welcome KH Library ==");
 		System.out.println();
 		
@@ -31,9 +30,9 @@ public class BookMenu {
 			switch(numNo) {
 			case 1 : insertBook(); break;
 			case 2 : selectList(); break;
-			case 3 : searchBook(); break;
-			case 4 : deleteBook(); break;
-			case 5 : ascBook(); break;
+			case 3 : break;
+			case 4 : break;
+			case 5 : break;
 			case 9 : System.out.println("프로그램을 종료합니다."); break;
 			default : System.out.println("잘못 입력하였습니다. 다시 입력해주세요.");
 			
@@ -51,14 +50,44 @@ public class BookMenu {
 		String author = sc.nextLine();
 		System.out.println("◎ 장   르->(1.인문 2.자연과학 3.의료 4.기타)");
 		int category = sc.nextInt();
+	
+		// 1번 인문
+		// 2번 자연과학
+		// 3번 의료
+		// 4번 기타
+		String cate = "";		// 조건문 밖에 변수로 선언한다음 조건문 선언
+		if(category == 1) {
+			cate = "인문";
+		} else if(category == 2) {
+			cate = "자연과학";
+		} else if(category == 3) {
+			cate = "의료";
+		} else {
+			cate = "기타";
+		}
+		
 		System.out.println("◎ 가   격");
 		int price = sc.nextInt();
 		
+		Book book = new Book(title, author, cate, price);
+		bc.insertBook(book);
 	}
 	
 	public void selectList() {
 		
-	
+		List<Book> bookList = bc.selectList();
+		
+		if(bookList != null) {
+			System.out.println("존재하는 도서가 없습니다");
+		} else {
+			for(Book b : bookList) {
+				System.out.println("===== 도서 전체 조회 =====");
+				System.out.println("(" + b.getTitle() + "/" + b.getAuthor() + "/" + b.getCategory() + "/" + b.getPrice() + ")");
+			} 
+		}		
+		
+			
+		
 	}
 	
 	public void searchBook() {
