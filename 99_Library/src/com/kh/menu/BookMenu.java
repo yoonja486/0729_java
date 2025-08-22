@@ -67,7 +67,8 @@ public class BookMenu {
 		}
 		
 		System.out.println("◎ 가   격");
-		int price = sc.nextInt();
+		int price = sc.nextInt();		// nextInt()를 쓰고 그 다음줄에 nextLine() 만들어야함
+		sc.nextLine();
 		
 		Book book = new Book(title, author, cate, price);
 		bc.insertBook(book);
@@ -76,18 +77,15 @@ public class BookMenu {
 	public void selectList() {
 		
 		List<Book> bookList = bc.selectList();
-		
-		if(bookList != null) {
+
+		if(bookList == null) {
 			System.out.println("존재하는 도서가 없습니다");
 		} else {
-			for(Book b : bookList) {
+			for(Book bk : bookList) {
 				System.out.println("===== 도서 전체 조회 =====");
-				System.out.println("(" + b.getTitle() + "/" + b.getAuthor() + "/" + b.getCategory() + "/" + b.getPrice() + ")");
+				System.out.println("(" + bk.getTitle() + "/" + bk.getAuthor() + "/" + bk.getCategory() + "/" + bk.getPrice() + ")");
 			} 
 		}		
-		
-			
-		
 	}
 	
 	public void searchBook() {
