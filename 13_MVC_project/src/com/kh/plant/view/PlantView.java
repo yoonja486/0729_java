@@ -1,5 +1,6 @@
 package com.kh.plant.view;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -213,26 +214,8 @@ public class PlantView {
 			System.out.println("식물이 존재하지 않습니다.");
 		}
 		
-		System.out.println();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
+		System.out.println();	
+		}
+	
 	
 }

@@ -7,7 +7,7 @@ public class PlantRun {
 	public static void main(String[] args) {
 		
 		// MVC 패턴(Model - View - Controller)
-		// 애플리케이샨을 만들때 애플리케이션게 세가지 요소로 분리하자
+		// 애플리케이션을 만들때 애플리케이션에 세가지 요소로 분리하자
 		// 나는 소프트웨어 아키텍쳐 디자인 패턴
 		// 1. Model
 		// 데이터 담당 => VO
